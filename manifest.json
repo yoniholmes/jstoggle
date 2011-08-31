@@ -1,0 +1,14 @@
+{
+  "name": "JS Toggle",
+  "version": "0.1",
+  "description": "A simple tool to switch JavaScript on and off.",
+  "browser_action": {
+    "default_icon": "js-on.png"
+  },
+  "background_page": "background.html",
+  "permissions": [
+	"experimental",
+	"contentSettings",
+	"tabs"
+  ]
+}

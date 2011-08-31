@@ -1,0 +1,38 @@
+<html>
+<head>
+<script>
+
+chrome.browserAction.onClicked.addListener(function () {	
+	
+	chrome.tabs.getSelected(undefined, function(tab) {
+		var url = tab.url;
+		
+		chrome.experimental.contentSettings.javascript.get(
+			{
+				primaryUrl: url
+			},
+			function (details) {
+				
+				var isJSon = details.setting === "allow",
+					newJSsetting = isJSon ? "block" : "allow",
+					pattern = /^file:/.test(url) ? url : url.replace(/\/[^\/]*?$/, '/*');
+				pattern = '<all_urls>'
+				console.log(details.setting, pattern, newJSsetting)
+				
+				chrome.experimental.contentSettings.javascript.set({
+					'primaryPattern': pattern,
+					'setting': newJSsetting,
+					'scope': 'regular'
+				});
+				chrome.browserAction.setIcon({
+					'path': 'js-' + (isJSon ? 'off' : 'on') + '.png'
+				})
+				console.log('JS is now: ' + newJSsetting + 'ed')
+			}
+		);
+	});
+});
+
+</script>
+</head>
+</html>
