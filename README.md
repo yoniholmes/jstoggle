@@ -2,9 +2,9 @@ A simple JavaScript on/off switch for Google Chrome
 
 To install, follow these instructions:
 
-# Install Google Chrome 'dev channel' version
-# Inside Chrome visit: chrome://flags and ensure that 'Experimental Extension APIs' is enabled.
-# Inside Chrome visit: chrome://extensions/ and click 'Load unpacked extension...' and select the jstoggle directory.
+1. Install Google Chrome 'dev channel' version
+1. Inside Chrome visit: chrome://flags and ensure that 'Experimental Extension APIs' is enabled.
+1. Inside Chrome visit: chrome://extensions/ and click 'Load unpacked extension...' and select the jstoggle directory.
 
 More details of google chrome extensions can be found at: http://code.google.com/chrome/extensions/getstarted.html
 
